@@ -1,10 +1,11 @@
 function split(wholeArray) {
   /* your code here to define the firstHalf and secondHalf arrays */
-  let firstHalf = [];
-  for (let i = 0; i <= Math.floor(wholeArray.length / 2); i++) {
-    firstHalf.push(wholeArray.shift());
-  }
-  return [firstHalf, wholeArray];
+//   let firstHalf = [];
+//   for (let i = 0; i <= Math.floor(wholeArray.length / 2); i++) {
+//     firstHalf.push(wholeArray.shift());
+//   }
+//   return [firstHalf, wholeArray];
+  return [wholeArray.slice(0, Math.ceil(wholeArray.length / 2)), wholeArray.slice(Math.ceil(wholeArray.length / 2))]
 }
 
 
