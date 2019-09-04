@@ -10,8 +10,8 @@ const bubbleSort = (arr, callback = (a,b) => a > b) => {
             }
         }
     }
-    console.log(swapCounter);
-    swapCounter = 0;
+    // console.log(swapCounter);
+    // swapCounter = 0;
     return arr;
 
 };
@@ -22,5 +22,5 @@ const swap = (array, index) => {
     let placeholder = array[index];
     array[index] = array[index + 1];
     array[index + 1 ] = placeholder;
-    swapCounter++;
+    // swapCounter++;
 };
