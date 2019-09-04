@@ -1,11 +1,11 @@
 let swapCounter = 0;
 
-const bubbleSort = (arr) => {
+const bubbleSort = (arr, callback = (a,b) => a > b) => {
     if(arr.length <= 1) return arr;
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if (arr[j] > arr[j+1]) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - i; j++) {
+            if (callback(arr[j], arr[j+1])) {
                 swap(arr, j);
             }
         }

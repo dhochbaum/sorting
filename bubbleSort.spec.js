@@ -11,5 +11,8 @@ describe('Bubble Sort', function(){
     it('handles really long array', function() {
       expect(bubbleSort([4,12,5,20,1,7,14,100,3,-23])).toEqual([-23,1,3,4,5,7,12,14,20,100]);
     });
+    it('handles custom comparator', function() {
+      expect(bubbleSort([4,12,5,20,1], (a,b ) => a < b)).toEqual([20,12,5,4,1]);
+    });
   });
 
