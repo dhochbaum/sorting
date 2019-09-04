@@ -8,7 +8,7 @@ function split(wholeArray) {
 }
 
 
-const merge = (arr1, arr2) => {
+const merge = (arr1, arr2 = []) => {
     let outputArr = [];
     
 
@@ -24,15 +24,28 @@ const merge = (arr1, arr2) => {
 }
 
 const mergeSort = (input) => {
-    let arr = []
-    const len = input.length
-    //  [1,5,7,4,2,8]
-    while(arr.length < len) {
-        arr.push([input.shift()])
-    }
+    // let arr = []
+    // const len = input.length
+    // //  [1,5,7,4,2,8]
+    // while(arr.length < len) {
+    //     arr.push([input.shift()])
+    // }
 
-    while(arr.length > 1) {
-        arr.push(merge(arr.shift(), arr.shift()))
+    // while(arr.length > 1) {
+    //     // arr.push(merge(arr.shift(), arr.shift()))
+    //     let arr2 = [];
+    //     for(let i = 1; i < arr.length + 1; i += 2){
+    //         arr2.push(merge(arr[i-1], arr[i]))
+    //     }
+    //     arr = arr2
+    // }
+    // return arr[0]
+
+    let arr = split(input)
+
+    if(arr[0].length <= 1 && arr[1].length <= 1){
+        return merge(arr[0], arr[1])
+    } else {
+        return merge(mergeSort(arr[0]), mergeSort(arr[1]))
     }
-    return arr[0]
 }
