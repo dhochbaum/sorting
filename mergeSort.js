@@ -24,16 +24,15 @@ const merge = (arr1, arr2) => {
 }
 
 const mergeSort = (input) => {
-    let arr = [input]
-    //  [1,2,4,6,3,7]
-    while(arr[[0].length > 1]) {
-        // let temp = split(arr)
-        // for(let i = 0; i < arr.length; i++){
-        //     temp.concat(split(arr[i]))
-        // }
-        // arr = temp
-
-        arr.concat(split(arr.shift()))
+    let arr = []
+    const len = input.length
+    //  [1,5,7,4,2,8]
+    while(arr.length < len) {
+        arr.push([input.shift()])
     }
-    console.log(arr)
+
+    while(arr.length > 1) {
+        arr.push(merge(arr.shift(), arr.shift()))
+    }
+    return arr[0]
 }
